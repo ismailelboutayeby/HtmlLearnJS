@@ -1,49 +1,29 @@
-
-// let users = []
-// let Name = document.querySelector("#login").elements.name
-// let Email = document.querySelector("#login").elements.email
-// let Password = document.querySelector("#login").elements.password
-
-// let isinlockalestorage = localStorage.getItem('Users')
-
-
-
-
-
-
-
 let users = []
 let Name = document.querySelector("#signup").elements.name
 let Email = document.querySelector("#signup").elements.email
 let Password = document.querySelector("#signup").elements.password
+users = JSON.parse(localStorage.getItem("Users"))
 
+let signup = (event) => {
 
-
-let signup = (event)=>{
-
-    event.preventDefault()
+  event.preventDefault()
+  if (users === null) {
+    console.log('users is null');
+    users = []
+  }
 
   users.push({
-    Name: Name.value ,
-    Email: Email.value ,
-    Password: Password.value 
+    Name: Name.value,
+    Email: Email.value,
+    Password: Password.value
   })
 
-
-
-  localStorage.setItem( "Users",JSON.stringify(users))
-    users =JSON.parse( localStorage.getItem( "Users"))
-    // console.log(users); 
-    
-  console.log(localStorage.length);
-  
+  localStorage.setItem('Users', JSON.stringify(users))
   console.log(users);
-  
+
 }
 
 
 
 
-
-    console.log(users);
 
