@@ -21,6 +21,10 @@ let signup = (event) => {
   localStorage.setItem('Users', JSON.stringify(users))
   console.log(users);
 
+  Name.value = ''
+  Email.value = ''
+  Password.value = ''
+
 }
 
 
